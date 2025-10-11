@@ -25,6 +25,7 @@ public:
         if (!head) {
             head = newNode;
             newNode->next = head;
+            head = newNode;
             return;
         }
         Node* temp = head;
@@ -34,14 +35,29 @@ public:
         newNode->next = head;
     }
 
+    void printSize() {
+        int count = 0;
+        if (!head) {
+            cout << "Size of Circular Linked List: " << count << endl;
+            return;
+        }
+        Node* temp = head;
+        do {
+            count++;
+            temp = temp->next;
+        } while (temp != head);
+        cout << "Size of Circular Linked List: " << count << endl;
+    }
+
     void display() {
-        if (!head) return;
+        if (!head)
+            return;
         Node* temp = head;
         do {
             cout << temp->data << " ";
             temp = temp->next;
         } while (temp != head);
-        cout << head->data;
+        cout << head->data << endl;
     }
 };
 
@@ -51,5 +67,6 @@ int main() {
     for (int i = 0; i < 5; i++)
         cll.insertEnd(arr[i]);
     cll.display();
+    cll.printSize(); 
     return 0;
 }
