@@ -35,14 +35,14 @@ public:
         newNode->prev = temp;
     }
 
-    int size() {
+    void printSize() { 
         int count = 0;
         Node* temp = head;
         while (temp) {
             count++;
             temp = temp->next;
         }
-        return count;
+        cout << "Size of Doubly Linked List: " << count << endl;
     }
 };
 
@@ -53,6 +53,6 @@ int main() {
     dll.insertEnd(45);
     dll.insertEnd(55);
 
-    cout << "Size of Doubly Linked List: " << dll.size() << endl;
+    dll.printSize();
     return 0;
 }
