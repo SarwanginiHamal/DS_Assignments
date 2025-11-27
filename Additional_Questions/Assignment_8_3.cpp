@@ -8,11 +8,6 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
-int maxDepth(TreeNode* root) {
-    if (!root) return 0;
-    return 1 + max(maxDepth(root->left), maxDepth(root->right));
-}
-
 TreeNode* buildTree(const vector<int>& a) {
     if (a.empty() || a[0] == -1) return nullptr;
     int n = a.size();
@@ -35,6 +30,11 @@ TreeNode* buildTree(const vector<int>& a) {
         i++;
     }
     return root;
+}
+
+int maxDepth(TreeNode* root) {
+    if (!root) return 0;
+    return 1 + max(maxDepth(root->left), maxDepth(root->right));
 }
 
 int main() {
