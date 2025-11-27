@@ -9,9 +9,9 @@ int main() {
     for (int num : nums) {
         freq[num]++;
     }
-    cout << "Frequency of each number:\n";
     for (auto& pair : freq) {
-        cout << pair.first << " : " << pair.second << endl;
+        cout << "• " << pair.first << " → " << pair.second 
+             << " " << (pair.second > 1 ? "times" : "time") << endl;
     }
     return 0;
 }
